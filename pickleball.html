@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Sky Pickleball</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-venue="pickleball">
+  <main class="venue-shell">
+    <nav class="topbar">
+      <a class="brand-mark" href="./index.html">Sport Ocean</a>
+      <div class="topbar-links">
+        <a href="./pickleball.html" aria-current="page">Pickle Court</a>
+        <a href="./cafe.html">Cafe</a>
+      </div>
+    </nav>
+
+    <section class="hero-section">
+      <div class="hero-copy-block">
+        <p class="eyebrow">Rooftop Courts</p>
+        <h1>Elite Sky Pickleball | Vasna Bhayli</h1>
+        <p class="hero-copy">
+          Vadodara's first rooftop pickleball arena with four courts, a cafe onsite, and a lively sports-and-lifestyle setting.
+        </p>
+        <div class="meta-cluster">
+          <span>5.00 rating</span>
+          <span>From Rs. 600</span>
+          <span>13 ratings</span>
+          <span>Vadodara, Gujarat</span>
+        </div>
+        <div class="hero-actions">
+          <a class="primary-btn" href="https://hudle.in/venues/elite-sky-pickleball/165867" target="_blank" rel="noreferrer">View Hudle Listing</a>
+          <a class="ghost-btn" href="https://www.instagram.com/eliteskypickleball?igsh=eHVvZG51dTd5djdr" target="_blank" rel="noreferrer">Instagram Page</a>
+          <a class="ghost-btn" href="#reviews">See Reviews</a>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="image-stack">
+          <div class="venue-photo venue-photo-pickle-1">
+            <span>Elite Sky rooftop atmosphere</span>
+          </div>
+          <div class="venue-photo venue-photo-pickle-2">
+            <span>Game-ready pickleball courts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-heading gallery-heading">
+        <div>
+          <p class="eyebrow">More Photos</p>
+          <h2>Let customers see the courts, rooftop feel, and venue setup at a glance.</h2>
+        </div>
+      </div>
+      <div class="photo-gallery">
+        <div class="gallery-photo gallery-pickle-1"><span>Main rooftop court view</span></div>
+        <div class="gallery-photo gallery-pickle-2"><span>Side angle of playing area</span></div>
+        <div class="gallery-photo gallery-pickle-3"><span>Match-ready court surface</span></div>
+        <div class="gallery-photo gallery-pickle-4"><span>Night atmosphere and lights</span></div>
+      </div>
+    </section>
+
+    <section class="details-grid">
+      <article class="detail-card">
+        <h2>Venue Details</h2>
+        <p>2nd Floor Rooftop, Pavitra landmark, Vasna - Bhayli Main Rd, opposite Panchmukhi Hanuman Mandir, Ashwamegh Nagar, Tandalja, Vadodara, Gujarat 391410</p>
+        <ul>
+          <li>Activity: Pickleball</li>
+          <li>Facilities: 4 courts available</li>
+          <li>Closest metro: NA</li>
+          <li>Payments: Card, Cash, UPI, Wallet</li>
+        </ul>
+      </article>
+
+      <article class="detail-card">
+        <h2>Why People Visit</h2>
+        <ul>
+          <li>Rooftop playing experience</li>
+          <li>Cafe, parking, flood lights, and seating area onsite</li>
+          <li>Fast slot booking flow</li>
+          <li>Official Instagram: @eliteskypickleball</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Live Feedback</p>
+          <h2>Reviews update instantly on this device and across open tabs.</h2>
+        </div>
+        <button class="owner-toggle" type="button" data-owner-toggle>Owner Mode: Off</button>
+      </div>
+
+      <div class="reviews-layout">
+        <form class="review-form" data-review-form>
+          <label>
+            Your name
+            <input type="text" name="name" maxlength="40" placeholder="Enter your name" required>
+          </label>
+          <label>
+            Rating
+            <select name="rating" required>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Very good</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Okay</option>
+              <option value="1">1 - Needs work</option>
+            </select>
+          </label>
+          <label>
+            Feedback
+            <textarea name="message" rows="5" maxlength="280" placeholder="Share your court experience" required></textarea>
+          </label>
+          <button class="primary-btn wide-btn" type="submit">Post Review</button>
+          <p class="form-note">Writers can delete their own reviews. Owner mode can delete any review.</p>
+        </form>
+
+        <div class="review-feed">
+          <div class="feed-header">
+            <h3>Community Reviews</h3>
+            <p data-review-count>0 reviews</p>
+          </div>
+          <div class="review-list" data-review-list></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

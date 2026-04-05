@@ -1,0 +1,747 @@
+:root {
+  --bg: #f6efe4;
+  --surface: rgba(255, 250, 244, 0.9);
+  --surface-strong: #fffaf3;
+  --text: #1f1a16;
+  --muted: #6f6258;
+  --accent: #c2551d;
+  --accent-dark: #8f3f18;
+  --line: rgba(31, 26, 22, 0.08);
+  --success: #215c3a;
+  --shadow: 0 24px 70px rgba(90, 61, 36, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(194, 85, 29, 0.16), transparent 28%),
+    radial-gradient(circle at right center, rgba(33, 92, 58, 0.16), transparent 22%),
+    linear-gradient(180deg, #f5efe6 0%, #efe0cf 100%);
+}
+
+body[data-venue="pickleball"] {
+  background:
+    radial-gradient(circle at top left, rgba(65, 132, 255, 0.24), transparent 24%),
+    radial-gradient(circle at right center, rgba(224, 56, 78, 0.22), transparent 26%),
+    linear-gradient(180deg, #07172f 0%, #0a1f40 42%, #102955 100%);
+  color: #edf3ff;
+}
+
+body[data-venue="cafe"] {
+  background:
+    radial-gradient(circle at top left, rgba(127, 173, 255, 0.18), transparent 24%),
+    radial-gradient(circle at right center, rgba(233, 111, 128, 0.18), transparent 28%),
+    linear-gradient(180deg, #1f2742 0%, #2c3558 42%, #394270 100%);
+  color: #f9f4f2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.landing-page,
+.venue-shell {
+  min-height: 100vh;
+}
+
+.landing-shell,
+.venue-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.landing-hero,
+.hero-section,
+.details-grid,
+.gallery-section,
+.reviews-section,
+.landing-grid {
+  animation: rise 0.7s ease both;
+}
+
+.landing-hero,
+.hero-section,
+.gallery-section,
+.detail-card,
+.reviews-section,
+.landing-card {
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: var(--shadow);
+}
+
+body[data-venue="pickleball"] .hero-section,
+body[data-venue="pickleball"] .gallery-section,
+body[data-venue="pickleball"] .detail-card,
+body[data-venue="pickleball"] .reviews-section {
+  background: linear-gradient(180deg, rgba(9, 26, 58, 0.95), rgba(12, 29, 71, 0.9));
+  border: 1px solid rgba(123, 169, 255, 0.18);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+}
+
+body[data-venue="cafe"] .hero-section,
+body[data-venue="cafe"] .gallery-section,
+body[data-venue="cafe"] .detail-card,
+body[data-venue="cafe"] .reviews-section {
+  background: linear-gradient(180deg, rgba(46, 56, 92, 0.92), rgba(36, 44, 74, 0.94));
+  border: 1px solid rgba(243, 169, 180, 0.2);
+  box-shadow: 0 28px 80px rgba(14, 18, 38, 0.34);
+}
+
+.landing-hero,
+.hero-section {
+  border-radius: 34px;
+}
+
+.landing-hero {
+  padding: 52px;
+  min-height: 64vh;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.landing-card,
+.detail-card,
+.gallery-section,
+.reviews-section {
+  border-radius: 28px;
+  padding: 28px;
+}
+
+.landing-card a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+body[data-venue="pickleball"] .brand-mark,
+body[data-venue="pickleball"] h1,
+body[data-venue="pickleball"] h2,
+body[data-venue="pickleball"] h3,
+body[data-venue="pickleball"] .feed-header p {
+  color: #f4f8ff;
+}
+
+body[data-venue="cafe"] .brand-mark,
+body[data-venue="cafe"] h1,
+body[data-venue="cafe"] h2,
+body[data-venue="cafe"] h3,
+body[data-venue="cafe"] .feed-header p {
+  color: #fff4f1;
+}
+
+.eyebrow,
+.card-kicker {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+body[data-venue="pickleball"] .eyebrow {
+  color: #7bb8ff;
+}
+
+body[data-venue="cafe"] .eyebrow {
+  color: #f1a9b4;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.9rem);
+  line-height: 0.97;
+  max-width: 10ch;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 12px;
+}
+
+.hero-copy {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+body[data-venue="pickleball"] .hero-copy,
+body[data-venue="pickleball"] .detail-card p,
+body[data-venue="pickleball"] .detail-card li,
+body[data-venue="pickleball"] .form-note,
+body[data-venue="pickleball"] .review-meta,
+body[data-venue="pickleball"] .empty-state {
+  color: #cbd8ef;
+}
+
+body[data-venue="cafe"] .hero-copy,
+body[data-venue="cafe"] .detail-card p,
+body[data-venue="cafe"] .detail-card li,
+body[data-venue="cafe"] .form-note,
+body[data-venue="cafe"] .review-meta,
+body[data-venue="cafe"] .empty-state {
+  color: #e8dbe0;
+}
+
+.landing-actions,
+.hero-actions,
+.topbar,
+.topbar-links,
+.meta-cluster,
+.section-heading,
+.feed-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.landing-actions,
+.hero-actions {
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.ghost-btn,
+.owner-toggle,
+.delete-btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ghost-btn,
+.owner-toggle {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(31, 26, 22, 0.08);
+}
+
+body[data-venue="pickleball"] .primary-btn {
+  background: linear-gradient(135deg, #3d82ff, #d92745);
+  color: #ffffff;
+}
+
+body[data-venue="pickleball"] .ghost-btn,
+body[data-venue="pickleball"] .owner-toggle {
+  background: rgba(13, 30, 67, 0.78);
+  border-color: rgba(123, 184, 255, 0.22);
+  color: #edf3ff;
+}
+
+body[data-venue="cafe"] .primary-btn {
+  background: linear-gradient(135deg, #f1a9b4, #7b9bff);
+  color: #1f2742;
+}
+
+body[data-venue="cafe"] .ghost-btn,
+body[data-venue="cafe"] .owner-toggle {
+  background: rgba(245, 237, 245, 0.1);
+  border-color: rgba(241, 169, 180, 0.26);
+  color: #fff4f1;
+}
+
+.primary-btn:hover,
+.ghost-btn:hover,
+.owner-toggle:hover,
+.delete-btn:hover {
+  transform: translateY(-1px);
+}
+
+.wide-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.topbar {
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding: 6px 4px;
+}
+
+.brand-mark {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.topbar-links a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.topbar-links a[aria-current="page"] {
+  background: #fff;
+}
+
+body[data-venue="pickleball"] .topbar-links a {
+  background: rgba(10, 28, 59, 0.78);
+  color: #dce7ff;
+  border: 1px solid rgba(123, 184, 255, 0.16);
+}
+
+body[data-venue="pickleball"] .topbar-links a[aria-current="page"] {
+  background: linear-gradient(135deg, rgba(61, 130, 255, 0.28), rgba(217, 39, 69, 0.24));
+}
+
+body[data-venue="cafe"] .topbar-links a {
+  background: rgba(245, 239, 247, 0.1);
+  color: #fff4f1;
+  border: 1px solid rgba(241, 169, 180, 0.2);
+}
+
+body[data-venue="cafe"] .topbar-links a[aria-current="page"] {
+  background: linear-gradient(135deg, rgba(241, 169, 180, 0.22), rgba(123, 155, 255, 0.18));
+}
+
+.hero-section {
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+}
+
+.hero-copy-block {
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+  align-content: center;
+}
+
+.meta-cluster {
+  flex-wrap: wrap;
+}
+
+.meta-cluster span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(31, 26, 22, 0.08);
+}
+
+body[data-venue="pickleball"] .meta-cluster span {
+  background: rgba(15, 36, 78, 0.86);
+  border-color: rgba(123, 184, 255, 0.14);
+  color: #edf3ff;
+}
+
+body[data-venue="cafe"] .meta-cluster span {
+  background: rgba(248, 240, 245, 0.1);
+  border-color: rgba(241, 169, 180, 0.24);
+  color: #fff4f1;
+}
+
+.visual-panel {
+  min-height: 420px;
+}
+
+.image-stack {
+  height: 100%;
+  display: grid;
+  gap: 18px;
+}
+
+.venue-photo {
+  min-height: 200px;
+  border-radius: 24px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  font-weight: 700;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-venue="pickleball"] .hero-section,
+body[data-venue="pickleball"] .gallery-section,
+body[data-venue="pickleball"] .detail-card,
+body[data-venue="pickleball"] .reviews-section,
+body[data-venue="pickleball"] .venue-photo,
+body[data-venue="pickleball"] .gallery-photo {
+  border-radius: 18px;
+}
+
+body[data-venue="cafe"] .hero-section,
+body[data-venue="cafe"] .gallery-section,
+body[data-venue="cafe"] .detail-card,
+body[data-venue="cafe"] .reviews-section,
+body[data-venue="cafe"] .venue-photo,
+body[data-venue="cafe"] .gallery-photo {
+  border-radius: 30px;
+}
+
+.venue-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0.05), rgba(16, 16, 16, 0.55));
+}
+
+.venue-photo span {
+  position: relative;
+  z-index: 1;
+}
+
+.venue-photo-pickle-1 {
+  background-image:
+    linear-gradient(135deg, rgba(194, 85, 29, 0.28), rgba(33, 92, 58, 0.16)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771327213-web_image");
+}
+
+.venue-photo-pickle-2 {
+  background-image:
+    linear-gradient(135deg, rgba(31, 26, 22, 0.3), rgba(194, 85, 29, 0.16)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359970-image_cropper_1771359961562.jpg");
+}
+
+.venue-photo-cafe-1 {
+  background-image:
+    linear-gradient(135deg, rgba(194, 85, 29, 0.28), rgba(31, 26, 22, 0.12)),
+    url("https://maps.google.com/maps/api/staticmap?center=22.2950132%2C73.1391887&zoom=17&size=900x900&language=en&sensor=false&key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&signature=i39mcfn4D9kRv5E54ROTFiSUU2o");
+}
+
+.venue-photo-cafe-2 {
+  background-image:
+    linear-gradient(135deg, rgba(33, 92, 58, 0.26), rgba(31, 26, 22, 0.1)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359972-image_cropper_1771359965655.jpg");
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.gallery-section {
+  margin-top: 22px;
+}
+
+.gallery-heading {
+  margin-bottom: 18px;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-photo {
+  min-height: 220px;
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0.06), rgba(16, 16, 16, 0.58));
+}
+
+.gallery-photo span {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-pickle-1 {
+  background-image:
+    linear-gradient(135deg, rgba(194, 85, 29, 0.2), rgba(33, 92, 58, 0.14)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771327213-web_image");
+}
+
+.gallery-pickle-2 {
+  background-image:
+    linear-gradient(135deg, rgba(31, 26, 22, 0.22), rgba(194, 85, 29, 0.16)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359970-image_cropper_1771359963611.jpg");
+}
+
+.gallery-pickle-3 {
+  background-image:
+    linear-gradient(135deg, rgba(31, 26, 22, 0.24), rgba(33, 92, 58, 0.18)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359971-image_cropper_1771359964795.jpg");
+}
+
+.gallery-pickle-4 {
+  background-image:
+    linear-gradient(135deg, rgba(194, 85, 29, 0.18), rgba(31, 26, 22, 0.28)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359974-image_cropper_1771359969047.jpg");
+}
+
+.gallery-cafe-1 {
+  background-image:
+    linear-gradient(135deg, rgba(194, 85, 29, 0.2), rgba(31, 26, 22, 0.18)),
+    url("https://maps.google.com/maps/api/staticmap?center=22.2950132%2C73.1391887&zoom=17&size=900x900&language=en&sensor=false&key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&signature=i39mcfn4D9kRv5E54ROTFiSUU2o");
+}
+
+.gallery-cafe-2 {
+  background-image:
+    linear-gradient(135deg, rgba(33, 92, 58, 0.2), rgba(31, 26, 22, 0.16)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359972-image_cropper_1771359965655.jpg");
+}
+
+.gallery-cafe-3 {
+  background-image:
+    linear-gradient(135deg, rgba(194, 85, 29, 0.18), rgba(31, 26, 22, 0.24)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359972-image_cropper_1771359966410.jpg");
+}
+
+.gallery-cafe-4 {
+  background-image:
+    linear-gradient(135deg, rgba(33, 92, 58, 0.2), rgba(194, 85, 29, 0.14)),
+    url("https://d3mt0x61rkkfy3.cloudfront.net/venue/9cf219c0-c59c-4ee3-95b6-630eefc10661/original/1771359973-image_cropper_1771359968171.jpg");
+}
+
+.detail-card p,
+.detail-card li,
+.form-note,
+.review-meta,
+.empty-state {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+.reviews-section {
+  margin-top: 22px;
+}
+
+.section-heading {
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.reviews-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.review-form {
+  display: grid;
+  gap: 14px;
+}
+
+.review-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: var(--surface-strong);
+}
+
+.review-feed {
+  min-width: 0;
+}
+
+.feed-header {
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(31, 26, 22, 0.08);
+  border-radius: 22px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+body[data-venue="pickleball"] .review-card {
+  background: rgba(9, 24, 53, 0.9);
+  border-color: rgba(123, 184, 255, 0.14);
+}
+
+body[data-venue="cafe"] .review-card {
+  background: rgba(248, 241, 245, 0.08);
+  border-color: rgba(241, 169, 180, 0.18);
+}
+
+.review-head,
+.review-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-rating {
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+body[data-venue="pickleball"] .review-rating {
+  color: #7bb8ff;
+}
+
+body[data-venue="cafe"] .review-rating {
+  color: #f1a9b4;
+}
+
+.delete-btn {
+  background: rgba(143, 63, 24, 0.1);
+  color: var(--accent-dark);
+  padding-inline: 14px;
+}
+
+body[data-venue="pickleball"] .delete-btn {
+  background: rgba(217, 39, 69, 0.16);
+  color: #ffd2dc;
+}
+
+body[data-venue="cafe"] .delete-btn {
+  background: rgba(241, 169, 180, 0.14);
+  color: #ffe2e8;
+}
+
+.owner-active {
+  background: rgba(33, 92, 58, 0.16);
+  border-color: rgba(33, 92, 58, 0.26);
+  color: var(--success);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(33, 92, 58, 0.12);
+  color: var(--success);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+body[data-venue="pickleball"] .badge {
+  background: rgba(61, 130, 255, 0.14);
+  color: #bdd8ff;
+}
+
+body[data-venue="cafe"] .badge {
+  background: rgba(241, 169, 180, 0.14);
+  color: #ffd6de;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-section,
+  .details-grid,
+  .photo-gallery,
+  .reviews-layout,
+  .landing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy-block,
+  .landing-hero {
+    padding: 20px;
+  }
+
+  .section-heading,
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-shell,
+  .venue-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+
+  .landing-hero,
+  .hero-section,
+  .landing-card,
+  .detail-card,
+  .reviews-section {
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  h1 {
+    max-width: 100%;
+  }
+}

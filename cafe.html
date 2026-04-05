@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Raga Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-venue="cafe">
+  <main class="venue-shell">
+    <nav class="topbar">
+      <a class="brand-mark" href="./index.html">Sport Ocean</a>
+      <div class="topbar-links">
+        <a href="./pickleball.html">Pickle Court</a>
+        <a href="./cafe.html" aria-current="page">Cafe</a>
+      </div>
+    </nav>
+
+    <section class="hero-section cafe-hero">
+      <div class="hero-copy-block">
+        <p class="eyebrow">Cafe Stop</p>
+        <h1>BREW RAGA CAFE</h1>
+        <p class="hero-copy">
+          The cafe experience linked from your Google Maps source, built for post-match hangouts, indoor-outdoor seating, and quick guest feedback.
+        </p>
+        <div class="meta-cluster">
+          <span>Fresh bites</span>
+          <span>Indoor + outdoor seating</span>
+          <span>Live music on select days</span>
+        </div>
+        <div class="hero-actions">
+          <a class="primary-btn" href="https://maps.app.goo.gl/JNR88HnbmmFS7pEm9" target="_blank" rel="noreferrer">Open Google Maps Link</a>
+          <a class="ghost-btn" href="https://www.instagram.com/brewragacafe?igsh=MWx5dDA2NWZ0aG1iMQ==" target="_blank" rel="noreferrer">Instagram Page</a>
+          <a class="ghost-btn" href="#reviews">See Reviews</a>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="image-stack">
+          <div class="venue-photo venue-photo-cafe-1">
+            <span>Cafe ambience</span>
+          </div>
+          <div class="venue-photo venue-photo-cafe-2">
+            <span>Comfortable hangout corners</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-heading gallery-heading">
+        <div>
+          <p class="eyebrow">More Photos</p>
+          <h2>Extra cafe and venue visuals so visitors can immediately understand the space.</h2>
+        </div>
+      </div>
+      <div class="photo-gallery">
+        <div class="gallery-photo gallery-cafe-1"><span>Brew Raga location view</span></div>
+        <div class="gallery-photo gallery-cafe-2"><span>Rooftop seating atmosphere</span></div>
+        <div class="gallery-photo gallery-cafe-3"><span>Cafe beside the sports venue</span></div>
+        <div class="gallery-photo gallery-cafe-4"><span>Easy post-game hangout spot</span></div>
+      </div>
+    </section>
+
+    <section class="details-grid">
+      <article class="detail-card">
+        <h2>Cafe Details</h2>
+        <p>Brew Raga Cafe sits alongside Elite Sky Pickleball and gives players a place to relax, eat, and watch matches from the rooftop venue.</p>
+        <ul>
+          <li>Located at Pavitra landmark, Vasna - Bhayli Main Rd, Tandalja, Vadodara</li>
+          <li>Found via the Google Maps short link you shared</li>
+          <li>Includes review moderation for the owner</li>
+          <li>Official Instagram: @brewragacafe</li>
+        </ul>
+      </article>
+
+      <article class="detail-card">
+        <h2>Best For</h2>
+        <ul>
+          <li>Friends waiting between matches</li>
+          <li>Post-game refreshment stops</li>
+          <li>Casual meetup before or after play</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Live Feedback</p>
+          <h2>Guests can post instantly, and the owner can remove any review when needed.</h2>
+        </div>
+        <button class="owner-toggle" type="button" data-owner-toggle>Owner Mode: Off</button>
+      </div>
+
+      <div class="reviews-layout">
+        <form class="review-form" data-review-form>
+          <label>
+            Your name
+            <input type="text" name="name" maxlength="40" placeholder="Enter your name" required>
+          </label>
+          <label>
+            Rating
+            <select name="rating" required>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Very good</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Okay</option>
+              <option value="1">1 - Needs work</option>
+            </select>
+          </label>
+          <label>
+            Feedback
+            <textarea name="message" rows="5" maxlength="280" placeholder="Share your cafe experience" required></textarea>
+          </label>
+          <button class="primary-btn wide-btn" type="submit">Post Review</button>
+          <p class="form-note">Owner mode asks for a password before allowing moderation.</p>
+        </form>
+
+        <div class="review-feed">
+          <div class="feed-header">
+            <h3>Guest Reviews</h3>
+            <p data-review-count>0 reviews</p>
+          </div>
+          <div class="review-list" data-review-list></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
